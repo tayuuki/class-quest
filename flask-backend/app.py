@@ -45,10 +45,18 @@ def get_work():
 @app.route('/list', methods=['GET'])
 def get_list():
     conn = get_db_connection()
-    list_rows = conn.execute('SELECT * FROM list').fetchall()
+    list_rows = conn.execute('SELECT * FROM lecturelist').fetchall()
     conn.close()
     list_list = [dict(row) for row in list_rows]
     return jsonify(list_list)
+
+@app.route('/survey', methods=['GET'])
+def get_survey():
+    conn = get_db_connection()
+    survey_rows = conn.execute('SELECT * FROM survey').fetchall()
+    conn.close()
+    survey_list = [dict(row) for row in survey_rows]
+    return jsonify(survey_list)
 
 if __name__ == '__main__':
     app.run(debug=True)
