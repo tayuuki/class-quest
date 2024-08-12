@@ -21,7 +21,7 @@ const TodaysClass = ({ schedule, dow, userid }) => {
 
   return (
     <div className="container mx-auto">
-      <h2 className="text-2xl font-bold mb-4">{dow} Schedule</h2>
+      <h2 className="text-2xl font-bold mb-4">{dow}</h2>
       <table className="table-auto w-full text-left border-collapse">
         <thead>
           <tr>

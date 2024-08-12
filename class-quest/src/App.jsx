@@ -9,6 +9,7 @@ import Survey from './pages/Survey';
 import Task from './pages/Task';
 import Search from './pages/Search';
 import Account from './pages/Account';
+import Ranking from './pages/Ranking';
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -83,9 +84,9 @@ function App() {
           <Route path='/class' element={<Class works={works} lists={lists} surveys={surveys} />} />
           <Route path='/survey' element={<Survey surveys={surveys} />} />
           <Route path='/task' element={<Task works={works} />} />
-          {/* <Route path='/search' element={<Search />} />
-          <Route path='/account' element={<Account />} />
-          <Route path='/ranking' element={<Ranking />} /> */}
+          <Route path='/ranking' element={<Ranking users={users}/>} />
+          <Route path='/search' element={<Search lectures={lectures} />} />
+          <Route path='/account' element={<Account users={users} />} />
         </Routes>
       </BrowserRouter>
     </>

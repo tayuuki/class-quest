@@ -59,16 +59,23 @@ CREATE TABLE survey (
 
 INSERT INTO user (username, password, name, university, intro, lesson, rank, xp)
 VALUES 
-('user1', 'password1', '蔵原りょう', 'University of Tokyo', 'I am a first-year student studying economics.', 'Economics, Law', 5, 2200),
-('user2', 'password2', 'Bob', 'Kyoto University', 'I am interested in computer science and mathematics.', 'Programming, Math', 7, 1800),
-('user3', 'password3', 'Charlie', 'Osaka University', 'My focus is on literature and history.', 'Literature, History', 4, 950);
+('user1', 'password1', '蔵原りょう', 'University of Tokyo', '単位とります！', '経済学入門', 5, 2200),
+('user2', 'password2', 'ベネッセ花子', 'Kyoto University', '頑張ります', '民法総則', 7, 1800),
+('user3', 'password3', 'ベネッセ太郎', 'Osaka University', 'よろしくお願いします', '英文法', 4, 950),
+('user4', 'password4', '進研ゼミ子', 'Osaka University', '友達になりましょう', '積分法', 4, 6050);
 
 
 INSERT INTO work (user_id, lesson, name, term, level) VALUES (1, '経済学入門', 'レポート', '2024-09-30', 4);
+INSERT INTO work (user_id, lesson, name, term, level) VALUES (1, '経済学入門', '小テスト', '2024-10-07', 2);
 INSERT INTO work (user_id, lesson, name, term, level) VALUES (1, '経済政策', 'レポート', '2024-10-30', 4);
 INSERT INTO work (user_id, lesson, name, term, level) VALUES (1, '英文法', '単語テスト', '2024-9-29', 4);
 INSERT INTO work (user_id, lesson, name, term, level) VALUES (1, 'マクロ経済学', '授業プリント', '2024-10-15', 2);
 INSERT INTO work (user_id, lesson, name, term, level) VALUES (1, '積分方', '問題集', '2024-8-12', 2);
+INSERT INTO work (user_id, lesson, name, term, level) VALUES (2, '経済学入門', 'レポート', '2024-09-30', 4);
+INSERT INTO work (user_id, lesson, name, term, level) VALUES (2, '経済政策', 'レポート', '2024-10-30', 4);
+INSERT INTO work (user_id, lesson, name, term, level) VALUES (2, '英文法', '単語テスト', '2024-9-29', 4);
+INSERT INTO work (user_id, lesson, name, term, level) VALUES (2, 'マクロ経済学', '授業プリント', '2024-10-15', 2);
+INSERT INTO work (user_id, lesson, name, term, level) VALUES (2, '積分方', '問題集', '2024-8-12', 2);
 
 
 -- 経済学関連の授業
@@ -114,14 +121,14 @@ INSERT INTO lecturelist (user_id, lesson, day, period, attend, count) VALUES (1,
 INSERT INTO lecturelist (user_id, lesson, day, period, attend, count) VALUES (1, '国際経済学', 'Friday', 5, 5, 5);
 
 -- 民法関連の授業
-INSERT INTO lecturelist (user_id, lesson, day, period, attend, count) VALUES (2, '民法総則', 'Monday', 2, 5, 5);
+INSERT INTO lecturelist (user_id, lesson, day, period, attend, count) VALUES (1, '民法総則', 'Monday', 2, 5, 5);
 INSERT INTO lecturelist (user_id, lesson, day, period, attend, count) VALUES (2, '物権法', 'Tuesday', 3, 5, 5);
 INSERT INTO lecturelist (user_id, lesson, day, period, attend, count) VALUES (2, '債権法', 'Wednesday', 4, 5, 5);
 INSERT INTO lecturelist (user_id, lesson, day, period, attend, count) VALUES (2, '家族法', 'Thursday', 5, 5, 5);
 INSERT INTO lecturelist (user_id, lesson, day, period, attend, count) VALUES (2, '相続法', 'Friday', 1, 5, 5);
 
 -- 英語関連の授業
-INSERT INTO lecturelist (user_id, lesson, day, period, attend, count) VALUES (3, '英会話基礎', 'Monday', 3, 5, 5);
+INSERT INTO lecturelist (user_id, lesson, day, period, attend, count) VALUES (1, '英会話基礎', 'Monday', 3, 5, 5);
 INSERT INTO lecturelist (user_id, lesson, day, period, attend, count) VALUES (3, '英文法', 'Tuesday', 4, 5, 5);
 INSERT INTO lecturelist (user_id, lesson, day, period, attend, count) VALUES (3, 'ビジネス英語', 'Wednesday', 5, 5, 5);
 INSERT INTO lecturelist (user_id, lesson, day, period, attend, count) VALUES (3, '英語文学', 'Thursday', 1, 5, 5);

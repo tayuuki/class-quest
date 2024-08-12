@@ -42,7 +42,7 @@ const Home = ({ lectures, works, lists }) => {
 				<div>
 					<div className='flex flex-col md:flex-row'>
 						<div className='md:w-1/2'>
-						<h2 className="text-2xl font-bold my-4 ml-5">Home Works</h2>
+						<h2 className="text-2xl font-bold my-4 ml-5">課題</h2>
               {sortedWorks.length > 0 ? (
                 <div className='m-5'>
                   {sortedWorks.map((work) => (

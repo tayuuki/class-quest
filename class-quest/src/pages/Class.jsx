@@ -3,6 +3,7 @@ import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { useLocation, useNavigate } from 'react-router-dom';
 import TodaysTasks from '../components/TodaysTasks';
+import Header from '../components/Header';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -51,7 +52,7 @@ const Class = ({ works, lists, surveys }) => {
 				<div className="flex justify-center items-center space-x-6 mb-8 bg-white p-6 rounded-lg shadow-lg w-full max-w-full">
 					<div className="text-center">
 						<h1 className="text-3xl font-bold text-gray-800">{lesson}</h1>
-						<h2 className="text-xl text-gray-500 mt-2">月曜 1限</h2>
+						<h2 className="text-xl text-gray-500 mt-2">{list.day} {list.period}限</h2>
 					</div>
 					<div className="w-64 h-64">
 						<Doughnut data={data} />
@@ -72,7 +73,7 @@ const Class = ({ works, lists, surveys }) => {
 					))}
 				</div>
 				<div className="mt-8">
-					<h2 className="text-2xl font-bold mb-4">Today's Tasks</h2>
+					<h2 className="text-2xl font-bold mb-4">課題</h2>
 					{sortedWorks.length > 0 ? (
 						sortedWorks.map((work, index) => (
 							<TodaysTasks key={index} work={work} />

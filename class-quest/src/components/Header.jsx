@@ -12,13 +12,13 @@ const Header = () => {
           <button onClick={() => navigate("/task")} className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">
             Task
           </button>
-          <button className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">
+          <button onClick={() => navigate("/account")} className="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">
             Account
           </button>
-          <button className="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded">
+          <button onClick={() => navigate("/search")} className="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded">
             Search
           </button>
-          <button className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">
+          <button onClick={() => navigate("/ranking")} className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded">
             Ranking
           </button>
           <button onClick={() => 
