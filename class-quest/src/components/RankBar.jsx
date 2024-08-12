@@ -10,7 +10,7 @@ const RankBar = ({ level, percent }) => {
       </h2>
       <div className="shadow bg-gray-300 mt-2 w-full rounded">
         <div
-          className="bg-yellow-500 text-xs leading-none py-3 rounded"
+          className="bg-green-500 text-xs leading-none py-3 rounded"
           style={{ width: `${percent}%` }}
         ></div>
       </div>

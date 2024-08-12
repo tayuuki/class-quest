@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header';
 
 const Login = ({ users }) => {
   const [username, setUsername] = useState('');
@@ -24,7 +23,6 @@ const Login = ({ users }) => {
 
   return (
     <>
-      <Header />
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
         <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
           <h1 className="text-2xl font-bold mb-4 text-center">Login</h1>
