@@ -52,14 +52,14 @@ CREATE TABLE survey (
     user_id INTEGER,
     lesson TEXT,
     attend BOOLEAN,
-    understand INT CHECK(understand >= 0 AND understand <= 9),
+    understand INT CHECK(understand >= 1 AND understand <= 10),
     iswork BOOLEAN,
     num INTEGER
 );
 
 INSERT INTO user (username, password, name, university, intro, lesson, rank, xp)
 VALUES 
-('user1', 'password1', '蔵原りょう', 'University of Tokyo', 'I am a first-year student studying economics.', 'Economics, Law', 5, 1200),
+('user1', 'password1', '蔵原りょう', 'University of Tokyo', 'I am a first-year student studying economics.', 'Economics, Law', 5, 2200),
 ('user2', 'password2', 'Bob', 'Kyoto University', 'I am interested in computer science and mathematics.', 'Programming, Math', 7, 1800),
 ('user3', 'password3', 'Charlie', 'Osaka University', 'My focus is on literature and history.', 'Literature, History', 4, 950);
 
@@ -68,6 +68,7 @@ INSERT INTO work (user_id, lesson, name, term, level) VALUES (1, '経済学入�
 INSERT INTO work (user_id, lesson, name, term, level) VALUES (1, '経済政策', 'レポート', '2024-10-30', 4);
 INSERT INTO work (user_id, lesson, name, term, level) VALUES (1, '英文法', '単語テスト', '2024-9-29', 4);
 INSERT INTO work (user_id, lesson, name, term, level) VALUES (1, 'マクロ経済学', '授業プリント', '2024-10-15', 2);
+INSERT INTO work (user_id, lesson, name, term, level) VALUES (1, '積分方', '問題集', '2024-8-12', 2);
 
 
 -- 経済学関連の授業

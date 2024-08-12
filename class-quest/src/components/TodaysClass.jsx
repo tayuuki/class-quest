@@ -4,14 +4,12 @@ import { useNavigate } from 'react-router-dom';
 const TodaysClass = ({ schedule, dow, userid }) => {
   const navigate = useNavigate();
 
-  // 1-5限までの配列を作成し、各時間に対応する授業を取得
   const periods = [1, 2, 3, 4, 5];
   const scheduleByPeriod = periods.map(period => {
     const classInfo = schedule.find(s => s.period === period);
     return classInfo ? classInfo.lesson : '';
   });
 
-  // 授業をクリックした際に画面遷移を行う関数
   const handleClick = (userid, lesson) => {
     navigate("/class", {
       state: {

@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 import sqlite3
 
@@ -9,6 +9,26 @@ def get_db_connection():
     conn = sqlite3.connect('server.db')
     conn.row_factory = sqlite3.Row
     return conn
+
+@app.route('/survey', methods=['POST'])
+def add_survey():
+    data = request.json
+    user_id = data.get('user_id')
+    lesson = data.get('lesson')
+    num = data.get('num')
+    attend = data.get('attend')
+    understand = data.get('understand')
+    iswork = data.get('iswork')
+
+    conn = get_db_connection()
+    conn.execute(
+        'INSERT INTO survey (user_id, lesson, num, attend, understand, iswork) VALUES (?, ?, ?, ?, ?, ?)',
+        (user_id, lesson, num, attend, understand, iswork)
+    )
+    conn.commit()
+    conn.close()
+
+    return jsonify({'message': 'Survey added successfully'}), 201
 
 @app.route('/user', methods=['GET'])
 def get_user():

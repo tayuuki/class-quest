@@ -36,7 +36,7 @@ const Home = ({ lectures, works, lists }) => {
 
 	return (
 		<div>
-			{/* <Header /> */}
+			<Header />
 			<div>
 				<HomePopup rank={user.xp} max={max} />
 				<div>
